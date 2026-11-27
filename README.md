@@ -65,6 +65,9 @@ rule cascade is unit tested on the JVM with real notification samples.
 `keystore.properties` at the repository root; when that file is absent the release build falls back to the
 debug signing config so `assembleRelease` still produces an installable artifact.
 
+Release assembly skips the vital lint pass (`lint { checkReleaseBuilds = false }`) to keep the pipeline
+fast; run `.\gradlew.bat :app:lintVitalRelease` explicitly when you want that report.
+
 ## Install on a Samsung S25
 
 1. Copy `app\build\outputs\apk\release\app-release.apk` to the phone (USB, Drive, or `adb install`).
