@@ -26,7 +26,7 @@ object DatabaseModule {
     fun provideDatabase(@ApplicationContext context: Context): BigCashDatabase =
         Room.databaseBuilder<BigCashDatabase>(
             context = context,
-            name = context.getDatabasePath(BigCashDatabase.NAME).absolutePath,
+            name = BigCashDatabase.NAME,
         )
             .setDriver(BundledSQLiteDriver())
             .fallbackToDestructiveMigration(dropAllTables = true)
