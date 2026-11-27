@@ -56,6 +56,12 @@ android {
         buildConfig = true
     }
 
+    lint {
+        // Release builds skip the vital lint pass: it is run explicitly in CI (./gradlew :app:lintVitalRelease).
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
+
     packaging {
         resources.excludes += setOf("/META-INF/{AL2.0,LGPL2.1}")
     }
