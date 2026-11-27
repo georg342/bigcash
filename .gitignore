@@ -19,6 +19,7 @@ keystore.properties
 
 # Generated tooling
 .tools/
+.kotlin/
 proguard-rules-tmp.pro
 
 # OS
